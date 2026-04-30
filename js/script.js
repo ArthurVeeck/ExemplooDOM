@@ -83,4 +83,4 @@ botaoAtivar2.addEventListener("click", function(){
 
         peca2Ativada = true;
     }
-});
+})
