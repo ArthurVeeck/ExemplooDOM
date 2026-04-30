@@ -54,6 +54,6 @@ peca.addEventListener("click", function(){
     // Verificando se a peça está ativada
     if(pecaAtivada === true){
         // Caso a peça esteja ativada irá mandar para o site de explicação da matéria
-        peca.getAttribute = window.location.href = "https://professorederderosso.notion.site/Introdu-o-ao-JavaScript-DOM-3508374555cd80b7a4f6f4a6b00f21af"
+        peca.getAttribute = window.location.href = "paginaExplicação.html"
     }
 })
