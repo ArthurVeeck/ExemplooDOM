@@ -57,3 +57,30 @@ peca.addEventListener("click", function(){
         peca.getAttribute = window.location.href = "paginaExplicação.html"
     }
 })
+
+const botaoAtivar2 = document.getElementById("btnAtivar2");
+const peca2 = document.getElementById("peca2");
+const statusTexto2 = document.getElementById("statusTexto2");
+const iconePeca2 = document.getElementById("iconePeca2");
+const tituloPeca2 = document.getElementById("tituloPeca2");
+const textoPeca2 = document.getElementById("textoPeca2");
+
+let peca2Ativada = false;
+
+botaoAtivar2.addEventListener("click", function(){
+    if(!peca2Ativada){
+        peca2.classList.remove("bloqueada");
+        peca2.classList.add("ativa");
+
+        statusTexto2.innerText = "Ativada";
+        statusTexto2.style.color = "#22c55e";
+
+        iconePeca2.innerText = "🧩";
+        tituloPeca2.innerText = "Peça 2 ativada";
+        textoPeca2.innerText = "Você desbloqueou a segunda peça!";
+
+        botaoAtivar2.disabled = true;
+
+        peca2Ativada = true;
+    }
+});
