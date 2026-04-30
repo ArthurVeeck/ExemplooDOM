@@ -84,3 +84,19 @@ botaoAtivar2.addEventListener("click", function(){
         peca2Ativada = true;
     }
 })
+
+let ativo = false;
+
+botaoAtivar.addEventListener("click", function(){
+    if(!ativo){
+        peca.classList.add("ativa");
+        peca.classList.remove("bloqueada");
+        statusTexto.innerText = "Ativada";
+        ativo = true;
+    } else {
+        peca.classList.remove("ativa");
+        peca.classList.add("bloqueada");
+        statusTexto.innerText = "Bloqueada";
+        ativo = false;
+    }
+});
