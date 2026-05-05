@@ -1,5 +1,4 @@
-// ======================= PEÇA 1 ===============================
-
+// ================= PEÇA 1 =================
 const botaoAtivar = document.getElementById("btnAtivar");
 const peca = document.getElementById("peca");
 const statusTexto = document.getElementById("statusTexto");
@@ -9,108 +8,77 @@ const textoPeca = document.getElementById("textoPeca");
 
 let pecaAtivada = false;
 
-if(botaoAtivar){
-botaoAtivar.addEventListener("click", function(){
+botaoAtivar.onclick = () => {
+if(!pecaAtivada){
+    peca.classList.replace("bloqueada","ativa");
 
-    if(!pecaAtivada){
-        peca.classList.remove("bloqueada");
-        peca.classList.add("ativa");
+    statusTexto.innerText = "Ativada";
+    statusTexto.style.color = "#22c55e";
 
-        statusTexto.innerText = "Ativada";
-        statusTexto.style.color = "#22c55e";
+    iconePeca.innerText = "🧩";
+    tituloPeca.innerText = "Peça ativada";
+    textoPeca.innerText = "Você ativou a primeira peça";
 
-        iconePeca.innerText = "🧩";
-        tituloPeca.innerText = "Peça ativada";
-        textoPeca.innerText = "Você ativou a primeira peça";
-
-        botaoAtivar.innerText = "Peça Ativada";
-        botaoAtivar.disabled = true;
-
-        pecaAtivada = true;
-    }
-
-});
+    botaoAtivar.disabled = true;
+    pecaAtivada = true;
 }
+};
 
-if(peca){
-peca.addEventListener("click", function(){
-    if(pecaAtivada){
-        window.location.href = "paginaExplicação.html";
-    }
-});
+peca.onclick = () => {
+if(pecaAtivada){
+    window.location.href = "paginaExplicação.html";
 }
+};
 
 
-// =================== PEÇA 2 ===============================
-
-const botaoAtivar2 = document.getElementById("btnAtivar2");
+// ================= PEÇA 2 =================
+const btn2 = document.getElementById("btnAtivar2");
 const peca2 = document.getElementById("peca2");
-const statusTexto2 = document.getElementById("statusTexto2");
-const iconePeca2 = document.getElementById("iconePeca2");
-const tituloPeca2 = document.getElementById("tituloPeca2");
-const textoPeca2 = document.getElementById("textoPeca2");
+const status2 = document.getElementById("statusTexto2");
+const icone2 = document.getElementById("iconePeca2");
+const titulo2 = document.getElementById("tituloPeca2");
+const texto2 = document.getElementById("textoPeca2");
 
 let ativo2 = false;
 let cor2 = 0;
 
-if(botaoAtivar2){
-botaoAtivar2.addEventListener("click", function(){
+btn2.onclick = () => {
+if(!ativo2){
+    peca2.classList.replace("bloqueada","ativa");
 
-    if(!ativo2){
-        peca2.classList.remove("bloqueada");
-        peca2.classList.add("ativa");
+    status2.innerText = "Ativada";
+    status2.style.color = "#22c55e";
 
-        statusTexto2.innerText = "Ativada";
-        statusTexto2.style.color = "#22c55e";
+    icone2.innerText = "🌈";
+    titulo2.innerText = "Peça 2 ativada";
+    texto2.innerText = "Sistema avançado ativado!";
 
-        iconePeca2.innerText = "⚡";
-        tituloPeca2.innerText = "Peça 2 ativada";
-        textoPeca2.innerText = "Sistema avançado ativado!";
+    btn2.innerText = "Desativar";
+    ativo2 = true;
 
-        botaoAtivar2.innerText = "Desativar";
+}else{
+    peca2.classList.replace("ativa","bloqueada");
+    peca2.style.background = "";
 
-        ativo2 = true;
+    status2.innerText = "Bloqueada";
+    status2.style.color = "#facc15";
 
-    } else {
-        peca2.classList.remove("ativa");
-        peca2.classList.add("bloqueada");
+    icone2.innerText = "🔒";
+    titulo2.innerText = "Bloqueada";
+    texto2.innerText = "Aguardando...";
 
-        statusTexto2.innerText = "Bloqueada";
-        statusTexto2.style.color = "#facc15";
-
-        iconePeca2.innerText = "🔒";
-        tituloPeca2.innerText = "Bloqueada";
-        textoPeca2.innerText = "Aguardando...";
-
-        botaoAtivar2.innerText = "Ativar";
-
-        ativo2 = false;
-    }
-
-});
+    btn2.innerText = "Ativar";
+    ativo2 = false;
 }
+};
 
-// mudança de cor da peça 2
-if(peca2){
-peca2.addEventListener("click", function(){
-
-    if(ativo2){
-
-        if(cor2 === 0){
-            peca2.style.background = "red";
-            cor2 = 1;
-        } else if(cor2 === 1){
-            peca2.style.background = "blue";
-            cor2 = 2;
-        } else {
-            peca2.style.background = "green";
-            cor2 = 0;
-        }
-
-    }
-
-});
+// mudança de cor (mantida)
+peca2.onclick = () => {
+if(ativo2){
+    cor2 = (cor2 + 1) % 3;
+    peca2.style.background = ["red","blue","green"][cor2];
 }
+};
 
 
 // ================= PEÇA 3 =================
@@ -124,25 +92,34 @@ const texto3 = document.getElementById("textoPeca3");
 let ativo3 = false;
 
 btn3.onclick = () => {
-    if(!ativo3){
-        peca3.classList.replace("bloqueada","ativa");
-        status3.innerText = "Ativada";
-        status3.style.color = "#22c55e";
-        icone3.innerText = "⚡";
-        titulo3.innerText = "Peça 3 ativada";
-        texto3.innerText = "Você ativou a peça 3";
-        btn3.innerText = "Desativar";
-        ativo3 = true;
-    } else {
-        peca3.classList.replace("ativa","bloqueada");
-        status3.innerText = "Bloqueada";
-        status3.style.color = "#facc15";
-        icone3.innerText = "🔒";
-        titulo3.innerText = "Bloqueada";
-        texto3.innerText = "Aguardando...";
-        btn3.innerText = "Ativar";
-        ativo3 = false;
-    }
+if(!ativo3){
+    peca3.classList.replace("bloqueada","ativa");
+    peca3.style.background = "linear-gradient(135deg,#2563eb,#60a5fa)";
+
+    status3.innerText = "Ativada";
+    status3.style.color = "#60a5fa";
+
+    icone3.innerText = "💧";
+    titulo3.innerText = "Peça Azul";
+    texto3.innerText = "Energia da água ativada!";
+
+    btn3.innerText = "Desativar";
+    ativo3 = true;
+
+}else{
+    peca3.classList.replace("ativa","bloqueada");
+    peca3.style.background = "";
+
+    status3.innerText = "Bloqueada";
+    status3.style.color = "#facc15";
+
+    icone3.innerText = "🔒";
+    titulo3.innerText = "Bloqueada";
+    texto3.innerText = "Aguardando...";
+
+    btn3.innerText = "Ativar";
+    ativo3 = false;
+}
 };
 
 
@@ -157,25 +134,34 @@ const texto4 = document.getElementById("textoPeca4");
 let ativo4 = false;
 
 btn4.onclick = () => {
-    if(!ativo4){
-        peca4.classList.replace("bloqueada","ativa");
-        status4.innerText = "Ativada";
-        status4.style.color = "#22c55e";
-        icone4.innerText = "⚡";
-        titulo4.innerText = "Peça 4 ativada";
-        texto4.innerText = "Você ativou a peça 4";
-        btn4.innerText = "Desativar";
-        ativo4 = true;
-    } else {
-        peca4.classList.replace("ativa","bloqueada");
-        status4.innerText = "Bloqueada";
-        status4.style.color = "#facc15";
-        icone4.innerText = "🔒";
-        titulo4.innerText = "Bloqueada";
-        texto4.innerText = "Aguardando...";
-        btn4.innerText = "Ativar";
-        ativo4 = false;
-    }
+if(!ativo4){
+    peca4.classList.replace("bloqueada","ativa");
+    peca4.style.background = "linear-gradient(135deg,#dc2626,#f87171)";
+
+    status4.innerText = "Ativada";
+    status4.style.color = "#f87171";
+
+    icone4.innerText = "🔥";
+    titulo4.innerText = "Peça Fogo";
+    texto4.innerText = "Chamas liberadas!";
+
+    btn4.innerText = "Desativar";
+    ativo4 = true;
+
+}else{
+    peca4.classList.replace("ativa","bloqueada");
+    peca4.style.background = "";
+
+    status4.innerText = "Bloqueada";
+    status4.style.color = "#facc15";
+
+    icone4.innerText = "🔒";
+    titulo4.innerText = "Bloqueada";
+    texto4.innerText = "Aguardando...";
+
+    btn4.innerText = "Ativar";
+    ativo4 = false;
+}
 };
 
 
@@ -190,25 +176,34 @@ const texto5 = document.getElementById("textoPeca5");
 let ativo5 = false;
 
 btn5.onclick = () => {
-    if(!ativo5){
-        peca5.classList.replace("bloqueada","ativa");
-        status5.innerText = "Ativada";
-        status5.style.color = "#22c55e";
-        icone5.innerText = "⚡";
-        titulo5.innerText = "Peça 5 ativada";
-        texto5.innerText = "Você ativou a peça 5";
-        btn5.innerText = "Desativar";
-        ativo5 = true;
-    } else {
-        peca5.classList.replace("ativa","bloqueada");
-        status5.innerText = "Bloqueada";
-        status5.style.color = "#facc15";
-        icone5.innerText = "🔒";
-        titulo5.innerText = "Bloqueada";
-        texto5.innerText = "Aguardando...";
-        btn5.innerText = "Ativar";
-        ativo5 = false;
-    }
+if(!ativo5){
+    peca5.classList.replace("bloqueada","ativa");
+    peca5.style.background = "linear-gradient(135deg,#16a34a,#4ade80)";
+
+    status5.innerText = "Ativada";
+    status5.style.color = "#4ade80";
+
+    icone5.innerText = "🌿";
+    titulo5.innerText = "Peça Natureza";
+    texto5.innerText = "Força da natureza ativa!";
+
+    btn5.innerText = "Desativar";
+    ativo5 = true;
+
+}else{
+    peca5.classList.replace("ativa","bloqueada");
+    peca5.style.background = "";
+
+    status5.innerText = "Bloqueada";
+    status5.style.color = "#facc15";
+
+    icone5.innerText = "🔒";
+    titulo5.innerText = "Bloqueada";
+    texto5.innerText = "Aguardando...";
+
+    btn5.innerText = "Ativar";
+    ativo5 = false;
+}
 };
 
 
@@ -223,23 +218,32 @@ const texto6 = document.getElementById("textoPeca6");
 let ativo6 = false;
 
 btn6.onclick = () => {
-    if(!ativo6){
-        peca6.classList.replace("bloqueada","ativa");
-        status6.innerText = "Ativada";
-        status6.style.color = "#22c55e";
-        icone6.innerText = "⚡";
-        titulo6.innerText = "Peça 6 ativada";
-        texto6.innerText = "Você ativou a peça 6";
-        btn6.innerText = "Desativar";
-        ativo6 = true;
-    } else {
-        peca6.classList.replace("ativa","bloqueada");
-        status6.innerText = "Bloqueada";
-        status6.style.color = "#facc15";
-        icone6.innerText = "🔒";
-        titulo6.innerText = "Bloqueada";
-        texto6.innerText = "Aguardando...";
-        btn6.innerText = "Ativar";
-        ativo6 = false;
-    }
+if(!ativo6){
+    peca6.classList.replace("bloqueada","ativa");
+    peca6.style.background = "linear-gradient(135deg,#7c3aed,#c084fc)";
+
+    status6.innerText = "Ativada";
+    status6.style.color = "#c084fc";
+
+    icone6.innerText = "⚡";
+    titulo6.innerText = "Peça Energia";
+    texto6.innerText = "Poder máximo ativado!";
+
+    btn6.innerText = "Desativar";
+    ativo6 = true;
+
+}else{
+    peca6.classList.replace("ativa","bloqueada");
+    peca6.style.background = "";
+
+    status6.innerText = "Bloqueada";
+    status6.style.color = "#facc15";
+
+    icone6.innerText = "🔒";
+    titulo6.innerText = "Bloqueada";
+    texto6.innerText = "Aguardando...";
+
+    btn6.innerText = "Ativar";
+    ativo6 = false;
+}
 };
