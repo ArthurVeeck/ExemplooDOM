@@ -2,41 +2,391 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Resumo JavaScript e DOM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina de Explicação</title>
 
- <link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f0f0f,#1a1a2e);
+    color:white;
+    line-height:1.7;
+    padding:30px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+header h1{
+    font-size:3rem;
+    color:#00f7ff;
+    text-shadow:0 0 15px #00f7ff;
+}
+
+header p{
+    margin-top:10px;
+    color:#cfcfcf;
+}
+
+section{
+    background:#151525;
+    margin-bottom:30px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,247,255,0.2);
+    transition:0.3s;
+}
+
+section:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(0,247,255,0.4);
+}
+
+h2{
+    color:#00f7ff;
+    margin-bottom:15px;
+}
+
+p{
+    margin-bottom:15px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+.code{
+    background:#0d0d18;
+    border-left:5px solid #00f7ff;
+    padding:15px;
+    border-radius:10px;
+    overflow-x:auto;
+    margin-top:15px;
+    color:#7fffd4;
+    font-family:monospace;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+table th,
+table td{
+    border:1px solid #333;
+    padding:12px;
+    text-align:left;
+}
+
+table th{
+    background:#00f7ff;
+    color:black;
+}
+
+.demo-box{
+    background:#0d0d18;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+    border:1px solid #00f7ff;
+}
+
+.demo-button{
+    margin-top:15px;
+    background:#00f7ff;
+    color:black;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.demo-button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #00f7ff;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    color:#999;
+}
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    section{
+        padding:20px;
+    }
+
+}
+
+</style>
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>Resumo: JavaScript e DOM</h1>
+<header>
+    <h1>Introdução ao JavaScript + DOM</h1>
+    <p>Aprendendo como o JavaScript interage com páginas HTML</p>
+</header>
 
-<p>
-O conteúdo apresenta uma introdução ao JavaScript e ao DOM, explicando como o JavaScript funciona dentro do navegador e como ele torna as páginas interativas. O DOM (Document Object Model) é a estrutura criada pelo navegador a partir do HTML, organizada como uma árvore de elementos, permitindo que cada parte da página seja acessada e manipulada.
-</p>
-<br>
+<section>
+    <h2>📚 Objetivo da Aula</h2>
 
-<p>
-Também é explicada a relação entre HTML, CSS e JavaScript. O HTML é responsável pela estrutura da página, o CSS define a aparência e o JavaScript adiciona comportamento. O DOM atua como uma ponte entre o HTML e o JavaScript, permitindo que alterações sejam feitas dinamicamente.
-</p>
-<br>
+    <p>Ao final desta aula você será capaz de:</p>
 
-<p>
-O conteúdo mostra como acessar elementos da página utilizando métodos como getElementById e como reagir às ações do usuário por meio de eventos, como cliques. A partir desses eventos, é possível executar funções que modificam o conteúdo da página.
-</p>
-<br>
+    <ul>
+        <li>Entender o papel do JavaScript no navegador</li>
+        <li>Compreender o que é o DOM</li>
+        <li>Acessar elementos da página</li>
+        <li>Reagir a eventos do usuário</li>
+        <li>Alterar conteúdo e estilo dinamicamente</li>
+        <li>Criar a primeira peça interativa do projeto</li>
+    </ul>
+</section>
 
-<p>
-Além disso, são apresentados conceitos básicos como variáveis e estruturas condicionais, que permitem controlar o fluxo do programa e tomar decisões dentro do código.
-</p>
-<br>
+<section>
+    <h2>🧠 O que é o DOM?</h2>
 
-<p>
-Por fim, esses conceitos são aplicados em um pequeno projeto prático, onde um botão ativa uma peça na interface. Esse exemplo demonstra como o JavaScript pode manipular o DOM para alterar textos, estilos e estados, criando interatividade na página.
-</p>
-<br>
+    <p>
+        DOM significa <strong>Document Object Model</strong>.
+        É a estrutura criada pelo navegador para representar o HTML.
+    </p>
+
+    <p>
+        O JavaScript utiliza o DOM para acessar e modificar os elementos da página.
+    </p>
+
+    <div class="code">
+&lt;body&gt;
+    &lt;h1&gt;Título&lt;/h1&gt;
+    &lt;button&gt;Clique&lt;/button&gt;
+&lt;/body&gt;
+    </div>
+
+    <p>O navegador transforma isso em uma árvore de elementos:</p>
+
+    <div class="code">
+BODY
+ ├── H1
+ └── BUTTON
+    </div>
+
+</section>
+
+<section>
+
+    <h2>🔗 Relação entre HTML, CSS e JavaScript</h2>
+
+    <table>
+
+        <tr>
+            <th>Tecnologia</th>
+            <th>Função</th>
+        </tr>
+
+        <tr>
+            <td>HTML</td>
+            <td>Estrutura da página</td>
+        </tr>
+
+        <tr>
+            <td>CSS</td>
+            <td>Aparência e estilo</td>
+        </tr>
+
+        <tr>
+            <td>JavaScript</td>
+            <td>Comportamento e interatividade</td>
+        </tr>
+
+        <tr>
+            <td>DOM</td>
+            <td>Ponte entre HTML e JavaScript</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<section>
+
+    <h2>🔌 Como o JavaScript acessa o DOM</h2>
+
+    <p>O JavaScript usa o objeto <strong>document</strong> para acessar a página.</p>
+
+    <div class="code">
+// Acessa o documento inteiro
+document
+    </div>
+
+    <p>Exemplo buscando um elemento pelo ID:</p>
+
+    <div class="code">
+// Busca elemento pelo ID
+document.getElementById("titulo");
+    </div>
+
+</section>
+
+<section>
+
+    <h2>🧪 Exemplo Completo</h2>
+
+    <div class="code">
+&lt;h1 id="titulo"&gt;Olá&lt;/h1&gt;
+
+&lt;script&gt;
+
+// Captura o elemento
+const titulo = document.getElementById("titulo");
+
+// Altera o texto
+titulo.innerText = "Texto alterado pelo JavaScript";
+
+&lt;/script&gt;
+    </div>
+
+</section>
+
+<section>
+
+    <h2>⚙️ Eventos</h2>
+
+    <p>
+        Eventos são ações realizadas pelo usuário:
+    </p>
+
+    <ul>
+        <li>Cliques</li>
+        <li>Digitação</li>
+        <li>Carregamento da página</li>
+    </ul>
+
+    <div class="code">
+elemento.addEventListener("click", function(){
+
+    alert("Clicou!");
+
+});
+    </div>
+
+</section>
+
+<section>
+
+    <h2>🛠️ Manipulação do DOM</h2>
+
+    <p>O JavaScript consegue alterar texto, estilos e classes.</p>
+
+    <div class="code">
+// Alterando texto
+elemento.innerText = "Novo texto";
+
+// Alterando cor
+elemento.style.color = "red";
+
+// Manipulando classes
+elemento.classList.remove("bloqueada");
+elemento.classList.add("ativa");
+    </div>
+
+</section>
+
+<section>
+
+    <h2>🧠 Variáveis e Condições</h2>
+
+    <div class="code">
+// Variável
+let ativo = false;
+
+// Estrutura condicional
+if(ativo === false){
+
+    // ação
+
+}
+    </div>
+
+</section>
+
+<section>
+
+    <h2>🧩 Projeto da Aula</h2>
+
+    <p>
+        O projeto da aula é um <strong>Quebra-Cabeça Interativo</strong>,
+        onde o JavaScript ativa peças dinamicamente utilizando eventos e manipulação do DOM.
+    </p>
+
+    <div class="demo-box">
+
+        <h3>💡 Demonstração Visual</h3>
+
+        <p>
+            Exemplo de peça ativada utilizando JavaScript:
+        </p>
+
+        <div class="code">
+Peça 01 → Ativada ✅
+Ícone alterado 🧩
+Texto atualizado dinamicamente
+Classe CSS modificada
+        </div>
+
+        <button class="demo-button">
+            Exemplo de Botão Interativo
+        </button>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>📝 O que você aprendeu</h2>
+
+    <ul>
+        <li>O que é DOM</li>
+        <li>Como acessar elementos</li>
+        <li>Como reagir a eventos</li>
+        <li>Como alterar conteúdo</li>
+        <li>Como manipular classes</li>
+        <li>Como utilizar lógica com JavaScript</li>
+    </ul>
+
+</section>
+
+<footer>
+    <p>Introdução ao JavaScript + DOM • Aula Explicativa</p>
+</footer>
 
 </div>
 
