@@ -205,3 +205,178 @@ body {
     font-size: 32px;
   }
 }
+
+/* ===============================
+   MELHORIAS VISUAIS
+================================ */
+
+/* Layout mais bonito */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Card com efeito moderno */
+.card-info {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Hover no card */
+.card-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Botão moderno */
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+
+  background: linear-gradient(135deg,#2563eb,#7c3aed);
+  color: white;
+
+  transition: 0.3s;
+}
+
+/* Hover botão */
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(124,58,237,0.4);
+}
+
+/* Clique botão */
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* Peças */
+.peca {
+  min-height: 220px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 28px;
+
+  transition: 0.35s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho interno */
+.peca::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+  linear-gradient(
+    135deg,
+    transparent,
+    rgba(255,255,255,0.12)
+  );
+
+  pointer-events: none;
+}
+
+/* Hover peça */
+.peca:hover {
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow:
+  0 25px 50px rgba(0,0,0,0.45);
+}
+
+/* Clique na peça */
+.peca:active {
+  transform: scale(0.97);
+}
+
+/* Ícone */
+.icone {
+  font-size: 65px;
+  margin-bottom: 12px;
+
+  transition: 0.3s;
+}
+
+/* Ícone cresce no hover */
+.peca:hover .icone {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Título */
+.peca h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Texto */
+.peca p {
+  font-size: 17px;
+  color: #e2e8f0;
+}
+
+/* Peça bloqueada */
+.bloqueada {
+  background:
+  linear-gradient(
+    135deg,
+    #334155,
+    #0f172a
+  );
+
+  border: 2px solid rgba(148,163,184,0.2);
+
+  filter: grayscale(40%);
+}
+
+/* Peça ativa */
+.ativa {
+  border: 2px solid rgba(255,255,255,0.3);
+
+  box-shadow:
+  0 20px 60px rgba(34,197,94,0.35);
+}
+
+/* Status */
+.status-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px;
+  margin: 18px 0;
+
+  border-radius: 14px;
+
+  background: rgba(2,6,23,0.5);
+}
+
+/* Responsivo */
+@media(max-width: 768px){
+
+  h1{
+    font-size: 32px;
+  }
+
+  .peca{
+    min-height: 180px;
+  }
+
+}
