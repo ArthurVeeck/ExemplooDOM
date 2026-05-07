@@ -1,201 +1,275 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Define o padrão de caracteres da página -->
-  <meta charset="UTF-8">
 
+<meta charset="UTF-8">
 
-  <!-- Deixa a página adaptável para celular e computador -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
+<title>
+Quebra-Cabeça Interativo
+</title>
 
-  <!-- Título que aparece na aba do navegador -->
-  <title>Quebra-Cabeça Interativo</title>
+<link rel="stylesheet"
+href="css/style.css">
 
-
-  <!-- Conecta o arquivo CSS ao HTML -->
-  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+<main class="container">
 
-  <!-- Área principal da página -->
-  <main class="container">
-
-
-    <!-- Cabeçalho da página -->
+    <!-- HERO -->
     <section class="hero">
-      <p class="tag">Programação Website I</p>
 
-
-      <h1>Quebra-Cabeça Interativo</h1>
-
-
-      <p class="descricao">
-        Nesta aula vamos criar a primeira peça interativa usando HTML, CSS e JavaScript.
-      </p>
-    </section>
-
-    <div class="contador-box">
-Peças ativadas:
-<span id="contador">0</span>
-</div>
-
-    <!-- Área onde ficará o projeto -->
-    <section class="area-projeto">
-
-
-      <!-- Card com informações e botão -->
-      <div class="card-info">
-        <h2>Peça 01</h2>
-
-
-        <p>
-          Clique no botão para ativar a primeira peça do projeto.
+        <p class="tag">
+            Programação Website I
         </p>
 
+        <h1>
+            Quebra-Cabeça Interativo
+        </h1>
 
-        <!-- Área que mostra o status da peça -->
-        <div class="status-box">
-          <span>Status:</span>
-          <strong id="statusTexto">Bloqueada</strong>
-        </div>
-
-
-        <!-- Botão que será usado pelo JavaScript -->
-        <button id="btnAtivar" class="btn-principal">
-          Ativar Peça
-        </button>
-      </div>
-
-
-      <!-- Peça visual do quebra-cabeça -->
-      <div id="peca" class="peca bloqueada">
-        <div class="peca-conteudo">
-          <span id="iconePeca" class="icone">🔒</span>
-          <h3 id="tituloPeca">Peça Bloqueada</h3>
-          <p id="textoPeca">Aguardando interação...</p>
-        </div>
-      </div>
-      
-      <div class="card-info" id="card2">
-    <h2>Peça 02</h2>
-    <p>Clique para ativar a segunda peça.</p>
-  
-    <div class="status-box">
-      <span>Status:</span>
-      <strong id="statusTexto2">Bloqueada</strong>
-    </div>
-  
-    <button id="btnAtivar2" class="btn-principal">
-      Ativar Peça 2
-    </button>
-  </div>
-  
-  <div id="peca2" class="peca bloqueada">
-    <div class="peca-conteudo">
-      <span id="iconePeca2" class="icone">🔒</span>
-      <h3 id="tituloPeca2">Peça Bloqueada</h3>
-      <p id="textoPeca2">Aguardando interação...</p>
-    </div>
-  </div>
-  
-   <div class="card-info" id="card3">
-    <h2>Peça 03</h2>
-    <p>Clique para ativar a segunda peça.</p>
-  
-    <div class="status-box">
-      <span>Status:</span>
-      <strong id="statusTexto3">Bloqueada</strong>
-    </div>
-  
-    <button id="btnAtivar3" class="btn-principal">
-      Ativar Peça 3
-    </button>
-  </div>
-  
-  <div id="peca3" class="peca bloqueada">
-    <div class="peca-conteudo">
-      <span id="iconePeca3" class="icone">🔒</span>
-      <h3 id="tituloPeca3">Peça Bloqueada</h3>
-      <p id="textoPeca3">Aguardando interação...</p>
-    </div>
-  </div>
-
-   <div class="card-info" id="card4">
-    <h2>Peça 04</h2>
-    <p>Clique para ativar a segunda peça.</p>
-  
-    <div class="status-box">
-      <span>Status:</span>
-      <strong id="statusTexto4">Bloqueada</strong>
-    </div>
-  
-    <button id="btnAtivar4" class="btn-principal">
-      Ativar Peça 4
-    </button>
-  </div>
-  
-  <div id="peca4" class="peca bloqueada">
-    <div class="peca-conteudo">
-      <span id="iconePeca4" class="icone">🔒</span>
-      <h3 id="tituloPeca4">Peça Bloqueada</h3>
-      <p id="textoPeca4">Aguardando interação...</p>
-    </div>
-  </div>
-
-   <div class="card-info" id="card5">
-    <h2>Peça 05</h2>
-    <p>Clique para ativar a segunda peça.</p>
-  
-    <div class="status-box">
-      <span>Status:</span>
-      <strong id="statusTexto5">Bloqueada</strong>
-    </div>
-  
-    <button id="btnAtivar5" class="btn-principal">
-      Ativar Peça 5
-    </button>
-  </div>
-  
-  <div id="peca5" class="peca bloqueada">
-    <div class="peca-conteudo">
-      <span id="iconePeca5" class="icone">🔒</span>
-      <h3 id="tituloPeca5">Peça Bloqueada</h3>
-      <p id="textoPeca5">Aguardando interação...</p>
-    </div>
-  </div>
-
-   <div class="card-info" id="card6">
-    <h2>Peça 06</h2>
-    <p>Clique para ativar a segunda peça.</p>
-  
-    <div class="status-box">
-      <span>Status:</span>
-      <strong id="statusTexto6">Bloqueada</strong>
-    </div>
-  
-    <button id="btnAtivar6" class="btn-principal">
-      Ativar Peça 6
-    </button>
-  </div>
-  
-  <div id="peca6" class="peca bloqueada">
-    <div class="peca-conteudo">
-      <span id="iconePeca6" class="icone">🔒</span>
-      <h3 id="tituloPeca6">Peça Bloqueada</h3>
-      <p id="textoPeca6">Aguardando interação...</p>
-    </div>
-  </div>
-  
-    </main>
-  
-  
-    <!-- Conecta o JavaScript ao HTML -->
-    <script src="js/script.js"></script>
+        <p class="descricao">
+            Projeto interativo utilizando
+            HTML, CSS e JavaScript.
+        </p>
 
     </section>
+
+    <!-- CONTADOR -->
+    <div class="contador-box">
+
+        Peças ativadas:
+        <span id="contador">0</span>
+
+    </div>
+
+    <!-- GRID -->
+    <section class="grid">
+
+        <!-- ========================= -->
+        <!-- PEÇA 1 -->
+        <!-- ========================= -->
+
+        <div id="peca1"
+        class="peca bloqueada">
+
+            <div class="peca-conteudo">
+
+                <span id="icone1"
+                class="icone">
+                    🔒
+                </span>
+
+                <h3 id="titulo1">
+                    Peça Bloqueada
+                </h3>
+
+                <p id="texto1">
+                    Clique para ativar
+                </p>
+
+                <div class="status-interno">
+
+                    Status:
+
+                    <strong id="status1">
+                        Bloqueada
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- PEÇA 2 -->
+        <!-- ========================= -->
+
+        <div id="peca2"
+        class="peca bloqueada">
+
+            <div class="peca-conteudo">
+
+                <span id="icone2"
+                class="icone">
+                    🔒
+                </span>
+
+                <h3 id="titulo2">
+                    Peça Bloqueada
+                </h3>
+
+                <p id="texto2">
+                    Clique para ativar
+                </p>
+
+                <div class="status-interno">
+
+                    Status:
+
+                    <strong id="status2">
+                        Bloqueada
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- PEÇA 3 -->
+        <!-- ========================= -->
+
+        <div id="peca3"
+        class="peca bloqueada">
+
+            <div class="peca-conteudo">
+
+                <span id="icone3"
+                class="icone">
+                    🔒
+                </span>
+
+                <h3 id="titulo3">
+                    Peça Bloqueada
+                </h3>
+
+                <p id="texto3">
+                    Clique para ativar
+                </p>
+
+                <div class="status-interno">
+
+                    Status:
+
+                    <strong id="status3">
+                        Bloqueada
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- PEÇA 4 -->
+        <!-- ========================= -->
+
+        <div id="peca4"
+        class="peca bloqueada">
+
+            <div class="peca-conteudo">
+
+                <span id="icone4"
+                class="icone">
+                    🔒
+                </span>
+
+                <h3 id="titulo4">
+                    Peça Bloqueada
+                </h3>
+
+                <p id="texto4">
+                    Clique para ativar
+                </p>
+
+                <div class="status-interno">
+
+                    Status:
+
+                    <strong id="status4">
+                        Bloqueada
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- PEÇA 5 -->
+        <!-- ========================= -->
+
+        <div id="peca5"
+        class="peca bloqueada">
+
+            <div class="peca-conteudo">
+
+                <span id="icone5"
+                class="icone">
+                    🔒
+                </span>
+
+                <h3 id="titulo5">
+                    Peça Bloqueada
+                </h3>
+
+                <p id="texto5">
+                    Clique para ativar
+                </p>
+
+                <div class="status-interno">
+
+                    Status:
+
+                    <strong id="status5">
+                        Bloqueada
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- PEÇA 6 -->
+        <!-- ========================= -->
+
+        <div id="peca6"
+        class="peca bloqueada">
+
+            <div class="peca-conteudo">
+
+                <span id="icone6"
+                class="icone">
+                    🔒
+                </span>
+
+                <h3 id="titulo6">
+                    Peça Bloqueada
+                </h3>
+
+                <p id="texto6">
+                    Clique para ativar
+                </p>
+
+                <div class="status-interno">
+
+                    Status:
+
+                    <strong id="status6">
+                        Bloqueada
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
-
