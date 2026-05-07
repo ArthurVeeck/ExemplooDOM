@@ -1,3 +1,13 @@
+const contador = document.getElementById("contador");
+
+function atualizarContador(){
+
+    const totalAtivas =
+    document.querySelectorAll(".peca.ativa").length;
+
+    contador.innerText = totalAtivas;
+}
+
 // ================= PEÇA 1 =================
 const botaoAtivar = document.getElementById("btnAtivar");
 const peca = document.getElementById("peca");
@@ -21,6 +31,7 @@ if(!pecaAtivada){
 
     botaoAtivar.disabled = true;
     pecaAtivada = true;
+    atualizarContador();
 }
 };
 
@@ -55,6 +66,7 @@ if(!ativo2){
 
     btn2.innerText = "Desativar";
     ativo2 = true;
+    atualizarContador();
 
 }else{
     peca2.classList.replace("ativa","bloqueada");
@@ -69,6 +81,7 @@ if(!ativo2){
 
     btn2.innerText = "Ativar";
     ativo2 = false;
+    atualizarContador();
 }
 };
 
@@ -105,6 +118,7 @@ if(!ativo3){
 
     btn3.innerText = "Desativar";
     ativo3 = true;
+    atualizarContador();
 
 }else{
     peca3.classList.replace("ativa","bloqueada");
@@ -119,6 +133,7 @@ if(!ativo3){
 
     btn3.innerText = "Ativar";
     ativo3 = false;
+    atualizarContador();
 }
 };
 
@@ -147,6 +162,7 @@ if(!ativo4){
 
     btn4.innerText = "Desativar";
     ativo4 = true;
+    atualizarContador();
 
 }else{
     peca4.classList.replace("ativa","bloqueada");
@@ -161,6 +177,7 @@ if(!ativo4){
 
     btn4.innerText = "Ativar";
     ativo4 = false;
+    atualizarContador();
 }
 };
 
@@ -189,6 +206,7 @@ if(!ativo5){
 
     btn5.innerText = "Desativar";
     ativo5 = true;
+    atualizarContador();
 
 }else{
     peca5.classList.replace("ativa","bloqueada");
@@ -203,6 +221,7 @@ if(!ativo5){
 
     btn5.innerText = "Ativar";
     ativo5 = false;
+    atualizarContador();
 }
 };
 
@@ -231,6 +250,7 @@ if(!ativo6){
 
     btn6.innerText = "Desativar";
     ativo6 = true;
+    atualizarContador();
 
 }else{
     peca6.classList.replace("ativa","bloqueada");
@@ -245,5 +265,6 @@ if(!ativo6){
 
     btn6.innerText = "Ativar";
     ativo6 = false;
+    atualizarContador();
 }
 };
